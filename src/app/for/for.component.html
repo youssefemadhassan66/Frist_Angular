@@ -1,0 +1,12 @@
+<ul *ngIf="isvisible">
+  <ng-container *ngFor="let course of myCourses; let i = index">
+    <div [class.active]="course.isActive">
+      <button (click)="remove_course(course.id)" class="btn btn-danger">Remove</button>
+      <img [src]="course.imgUrl" alt="">
+      <li>{{i + 1}} - {{course.name}}</li>
+      <p>{{course.dis}}</p>
+      <button (click)="course.isActive = ! course.isActive">Inactive</button>
+    </div>
+  </ng-container>
+</ul>
+<button (click)="hideList()">Hide list</button>
